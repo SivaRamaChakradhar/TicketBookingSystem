@@ -50,6 +50,24 @@ If needed, set a custom backend URL:
 VITE_API_URL=http://localhost:4000
 ```
 
+## Deploy Frontend On GitHub Pages
+
+The frontend can be deployed to GitHub Pages, but it still needs a live backend URL.
+
+1. Deploy the backend first on Render.
+2. Copy the Render backend URL.
+3. Set `VITE_API_URL` in `frontend/.env.production` before building.
+4. From `frontend/`, run:
+
+```bash
+npm install
+npm run deploy
+```
+
+5. In GitHub repository settings, enable GitHub Pages from the `gh-pages` branch.
+
+The frontend build uses the repository base path `/TicketBookingSystem/`, so it is ready for GitHub Pages hosting.
+
 ## API Endpoints
 
 - `GET /api/shows/1/seats` - Seat map with availability
