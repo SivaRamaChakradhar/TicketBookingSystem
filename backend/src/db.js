@@ -2,7 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const sqlite3 = require('sqlite3').verbose();
 
-const dbPath = path.join(__dirname, '..', 'cinema.db');
+const dbPath = process.env.DATABASE_PATH || path.join(__dirname, '..', 'cinema.db');
 const schemaPath = path.join(__dirname, 'schema.sql');
 
 const db = new sqlite3.Database(dbPath);
