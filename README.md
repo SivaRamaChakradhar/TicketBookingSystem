@@ -50,42 +50,6 @@ If needed, set a custom backend URL:
 VITE_API_URL=http://localhost:4000
 ```
 
-## Deploy Frontend On GitHub Pages
-
-The frontend can be deployed to GitHub Pages, but it still needs a live backend URL.
-
-1. Deploy the backend first on Render.
-2. Copy the Render backend URL.
-3. Set `VITE_API_URL` in `frontend/.env.production` before building.
-4. From `frontend/`, run:
-
-```bash
-npm install
-npm run deploy
-```
-
-5. In GitHub repository settings, enable GitHub Pages from the `gh-pages` branch.
-
-The frontend build uses the repository base path `/TicketBookingSystem/`, so it is ready for GitHub Pages hosting.
-
-## Deploy Frontend On Vercel
-
-Vercel is a better fit for the React frontend than the backend in this project.
-
-1. Push the latest code to GitHub.
-2. In Vercel, import the repository.
-3. Set the root directory to `frontend`.
-4. Leave the framework as Vite or use the `frontend/vercel.json` file.
-5. Add this environment variable in Vercel:
-
-```bash
-VITE_API_URL=https://your-render-backend-url.onrender.com
-```
-
-6. Deploy.
-
-The backend should stay deployed on Render because the current backend uses SQLite and needs persistent storage, which is not ideal for Vercel serverless functions.
-
 ## API Endpoints
 
 - `GET /api/shows/1/seats` - Seat map with availability
