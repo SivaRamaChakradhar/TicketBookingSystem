@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/TicketBookingSystem/' : '/',
+  base: process.env.VERCEL ? '/' : mode === 'production' ? '/TicketBookingSystem/' : '/',
   plugins: [react()],
 }))
