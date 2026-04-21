@@ -2,6 +2,11 @@
 
 A full-stack cinema booking app built with Node.js, React, and SQL (SQLite).
 
+## Live Links
+
+- Frontend (GitHub Pages): https://sivaramachakradhar.github.io/TicketBookingSystem/
+- Backend (Render): https://ticketbookingsystem-1.onrender.com/api/shows/1/seats
+
 ## Features
 
 - View available seats for a show
