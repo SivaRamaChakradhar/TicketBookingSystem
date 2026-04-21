@@ -1,0 +1,159 @@
+.app-shell {
+  width: min(1080px, 94vw);
+  margin: 2rem auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.header-card,
+.panel {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #f4cc8f;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 12px 22px rgba(12, 9, 4, 0.1);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin: 0;
+  color: #b55f25;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+.hint {
+  margin-top: 0;
+  color: #6f4f35;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1rem;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(52px, 1fr));
+  gap: 0.55rem;
+}
+
+.seat {
+  border: 1px solid #8d6945;
+  border-radius: 10px;
+  min-height: 42px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.seat.available {
+  background: #fef3d9;
+  color: #52351f;
+}
+
+.seat.booked {
+  background: #d9d9d9;
+  color: #5b5b5b;
+  cursor: not-allowed;
+}
+
+.seat.selected {
+  background: #f97316;
+  color: #fff;
+  border-color: #d75e07;
+}
+
+.seat:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px rgba(80, 41, 9, 0.22);
+}
+
+.booking-form {
+  display: grid;
+  gap: 0.65rem;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input {
+  border: 1px solid #dcae72;
+  border-radius: 10px;
+  padding: 0.62rem 0.7rem;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  background: #ea580c;
+  color: white;
+  font-weight: 700;
+}
+
+button:disabled {
+  opacity: 0.65;
+}
+
+.booking-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.booking-list li {
+  border: 1px solid #f4cc8f;
+  border-radius: 12px;
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  background: #fff7ea;
+}
+
+.booking-list p {
+  margin: 0.2rem 0 0;
+}
+
+.feedback {
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  background: #fff3dd;
+  border: 1px solid #f2c585;
+  color: #6f3e11;
+  font-weight: 600;
+}
+
+@media (max-width: 860px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .seat-grid {
+    grid-template-columns: repeat(4, minmax(56px, 1fr));
+  }
+}
